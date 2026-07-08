@@ -1,0 +1,299 @@
+﻿{
+  "Users": [
+    {
+      "Id": 1,
+      "FirstName": "Dmytro",
+      "LastName": "Nesvitailo",
+      "Email": "dn91631@student.uwb.edu.pl",
+      "RoleId": "admin",
+      "Status": "Active",
+      "FullName": "Dmytro Nesvitailo"
+    },
+    {
+      "Id": 2,
+      "FirstName": "Marta",
+      "LastName": "Admin",
+      "Email": "marta.admin@crm.test",
+      "RoleId": "admin",
+      "Status": "Active",
+      "FullName": "Marta Admin"
+    },
+    {
+      "Id": 3,
+      "FirstName": "Anna",
+      "LastName": "Sales",
+      "Email": "anna.sales@crm.test",
+      "RoleId": "sales",
+      "Status": "Active",
+      "FullName": "Anna Sales"
+    },
+    {
+      "Id": 4,
+      "FirstName": "Julia",
+      "LastName": "Manager",
+      "Email": "julia.manager@crm.test",
+      "RoleId": "manager",
+      "Status": "Active",
+      "FullName": "Julia Manager"
+    },
+    {
+      "Id": 5,
+      "FirstName": "Marek",
+      "LastName": "Director",
+      "Email": "marek.director@crm.test",
+      "RoleId": "director",
+      "Status": "Active",
+      "FullName": "Marek Director"
+    }
+  ],
+  "Roles": [
+    {
+      "Id": "admin",
+      "Name": "Administrator systemu",
+      "Modules": [
+        "dashboard",
+        "clients",
+        "deals",
+        "tasks",
+        "reports",
+        "admin"
+      ]
+    },
+    {
+      "Id": "sales",
+      "Name": "Handlowiec",
+      "Modules": [
+        "dashboard",
+        "clients",
+        "deals",
+        "tasks"
+      ]
+    },
+    {
+      "Id": "manager",
+      "Name": "Manager sprzedazy",
+      "Modules": [
+        "dashboard",
+        "clients",
+        "deals",
+        "tasks",
+        "reports"
+      ]
+    },
+    {
+      "Id": "director",
+      "Name": "Dyrektor handlowy / Zarzad",
+      "Modules": [
+        "dashboard",
+        "deals",
+        "reports"
+      ]
+    }
+  ],
+  "Clients": [
+    {
+      "Id": 10,
+      "CompanyName": "BlueSoft Sp. z o.o.",
+      "ContactName": "Piotr Zielinski",
+      "Phone": "503 456 789",
+      "Email": "piotr@bluesoft.test",
+      "Owner": "Anna Sales",
+      "Created": "2026-01-08",
+      "Notes": [
+        {
+          "Id": 502,
+          "Date": "2026-01-15",
+          "Author": "Dmytro Nesvitailo",
+          "Text": "sfsfsfd"
+        },
+        {
+          "Id": 101,
+          "Date": "2026-01-08",
+          "Author": "Anna Sales",
+          "Text": "Client asked for phone offer."
+        },
+        {
+          "Id": 102,
+          "Date": "2026-01-11",
+          "Author": "Anna Sales",
+          "Text": "Follow-up planned this week."
+        }
+      ]
+    },
+    {
+      "Id": 11,
+      "CompanyName": "TechVision S.A.",
+      "ContactName": "Jan Kowalski",
+      "Phone": "502 345 678",
+      "Email": "jan@techvision.test",
+      "Owner": "Daniel Sales",
+      "Created": "2026-01-10",
+      "Notes": [
+        {
+          "Id": 103,
+          "Date": "2026-01-10",
+          "Author": "Daniel Sales",
+          "Text": "Interested in laptop package."
+        }
+      ]
+    },
+    {
+      "Id": 12,
+      "CompanyName": "GreenHouse S.A.",
+      "ContactName": "Marta Sikora",
+      "Phone": "504 567 890",
+      "Email": "marta@greenhouse.test",
+      "Owner": "Anna Sales",
+      "Created": "2026-01-11",
+      "Notes": []
+    }
+  ],
+  "Deals": [
+    {
+      "Id": 201,
+      "ClientId": 10,
+      "Title": "iPhone 15 package",
+      "Stage": "Quoted",
+      "Value": 3499,
+      "Deadline": "2026-01-20",
+      "Owner": "Anna Sales",
+      "Created": "2026-01-08",
+      "LastActivityDate": "2026-01-12",
+      "History": [
+        {
+          "Date": "2026-01-12",
+          "Author": "Anna Sales",
+          "Text": "Stage changed: Contacted -\u003E Quoted."
+        },
+        {
+          "Date": "2026-01-08",
+          "Author": "Anna Sales",
+          "Text": "Deal created in New stage."
+        }
+      ]
+    },
+    {
+      "Id": 202,
+      "ClientId": 11,
+      "Title": "MacBook Air for TechVision",
+      "Stage": "Negotiation",
+      "Value": 5299,
+      "Deadline": "2026-01-23",
+      "Owner": "Daniel Sales",
+      "Created": "2026-01-10",
+      "LastActivityDate": "2026-01-04",
+      "History": [
+        {
+          "Date": "2026-01-10",
+          "Author": "Daniel Sales",
+          "Text": "Deal created."
+        }
+      ]
+    },
+    {
+      "Id": 203,
+      "ClientId": 12,
+      "Title": "Accessory bundle",
+      "Stage": "Won",
+      "Value": 1600,
+      "Deadline": "2026-01-14",
+      "Owner": "Anna Sales",
+      "Created": "2026-01-11",
+      "LastActivityDate": "2026-01-14",
+      "History": [
+        {
+          "Date": "2026-01-14",
+          "Author": "Anna Sales",
+          "Text": "Stage changed: Negotiation -\u003E Won."
+        }
+      ]
+    },
+    {
+      "Id": 204,
+      "ClientId": 10,
+      "Title": "Samsung S24 order",
+      "Stage": "Contacted",
+      "Value": 3899,
+      "Deadline": "2026-01-28",
+      "Owner": "Anna Sales",
+      "Created": "2026-01-14",
+      "LastActivityDate": "2026-01-14",
+      "History": [
+        {
+          "Date": "2026-01-14",
+          "Author": "Anna Sales",
+          "Text": "Deal created after phone call."
+        }
+      ]
+    },
+    {
+      "Id": 205,
+      "ClientId": 10,
+      "Title": "MacBook Air for office team",
+      "Stage": "Contacted",
+      "Value": 12000,
+      "Deadline": "2026-01-15",
+      "Owner": "Anna Sales",
+      "Created": "2026-01-15",
+      "LastActivityDate": "2026-01-15",
+      "History": [
+        {
+          "Date": "2026-01-15",
+          "Author": "Anna Sales",
+          "Text": "Deal created in New stage."
+        }
+      ]
+    }
+  ],
+  "Tasks": [
+    {
+      "Id": 301,
+      "Title": "Call Piotr about final decision",
+      "DealId": 201,
+      "ClientId": 10,
+      "DueDate": "2026-01-16",
+      "Priority": "High",
+      "Owner": "Anna Sales",
+      "Status": "Open"
+    },
+    {
+      "Id": 302,
+      "Title": "Send updated MacBook quote",
+      "DealId": 202,
+      "ClientId": 11,
+      "DueDate": "2026-01-11",
+      "Priority": "High",
+      "Owner": "Daniel Sales",
+      "Status": "In progress"
+    },
+    {
+      "Id": 303,
+      "Title": "Prepare invoice for accessories",
+      "DealId": 203,
+      "ClientId": 12,
+      "DueDate": "2026-01-14",
+      "Priority": "Medium",
+      "Owner": "Anna Sales",
+      "Status": "Done"
+    }
+  ],
+  "Audit": [
+    {
+      "Id": 401,
+      "Date": "2026-01-10 09:15",
+      "Admin": "Marta Admin",
+      "Action": "Initial setup",
+      "Target": "System",
+      "Details": "Default roles and demo data created."
+    }
+  ],
+  "SavedViews": [
+    {
+      "Id": 501,
+      "Name": "All sales this month",
+      "DateFrom": "2026-01-01",
+      "DateTo": "2026-01-31",
+      "Owner": "All"
+    }
+  ]
+}
