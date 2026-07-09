@@ -1,4 +1,4 @@
-# MiniCRM
+﻿# MiniCRM
 
 MiniCRM is a C# web application for managing clients, sales deals, follow-up tasks, reports and user access.
 
@@ -52,3 +52,24 @@ README.md
 ## Notes
 
 This is an educational CRM project focused on business workflows, user interface structure and role-based access control.
+
+## Screenshots
+
+### Dashboard
+![Dashboard](screenshots/dashboard.png)
+
+### Clients / Client 360
+![Clients](screenshots/clients.png)
+
+### Deals Pipeline
+![Deals](screenshots/deals.png)
+
+### Tasks / Follow-ups
+![Tasks](screenshots/tasks.png)
+
+### Reports
+![Reports](screenshots/reports.png)
+
+### Admin / Settings
+![Admin](screenshots/admin.png)
+
