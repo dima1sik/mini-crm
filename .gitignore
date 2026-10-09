@@ -3,3 +3,7 @@ obj/
 .vs/
 *.user
 *.log
+
+# Local CRM state and temporary atomic writes
+App_Data/
+TestResults/
