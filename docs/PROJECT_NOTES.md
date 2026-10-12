@@ -1,28 +1,13 @@
-﻿# MiniCRM Project Notes
+# Implementation notes
 
-## Short explanation for interview
+MiniCRM models clients, opportunities, follow-ups, demo users and role permissions. The project is intended to demonstrate a small connected business workflow with a server-rendered interface.
 
-I built MiniCRM as a C#/.NET portfolio project to practice business-oriented user interfaces and application logic.
+- Endpoints parse forms and enforce module access; services validate and apply workflow changes.
+- The local store gives readers detached snapshots. A single lock serializes mutations, and a flushed temporary file is renamed only after a successful write. Failed validation or persistence leaves the in-memory state unchanged.
+- Existing JSON is validated on startup. Corrupt or unsupported data needs an explicit repair or backup restore, rather than automatic replacement.
+- Notes participate in global ID allocation. A follow-up is linked to a real deal and its client.
+- Blocking and role permissions are checked for pages, mutations and exports. Every POST needs an antiforgery token. The demo selector remains intentionally available to switch identities, including blocked identities.
+- Overdue status is derived from due dates and the current UTC date. Reports use current deal stages and creation-date filters, with an actual preceding period of equal length.
+- PDF export embeds a licensed Unicode font and wraps and paginates all rows. Spreadsheet export uses typed strings in Excel 2003 XML, preserving text without interpreting it as formulas.
 
-The application includes typical CRM workflows: client management, Client 360 view, deal pipeline, follow-up tasks, reports, user management, role-based access and local data persistence.
-
-The main goal was to practice connecting C# application logic with user-facing interface screens and structured business workflows.
-
-## What I can explain
-
-- Why I chose CRM as a business application example
-- How clients, deals, tasks, users and roles are represented in the application
-- How routing between Dashboard, Clients, Deals, Tasks, Reports and Admin works
-- How role-based module access is handled
-- How client notes, deal history and audit log are stored
-- How reports are generated and exported
-- What I would improve next: database, authentication, better validation, separate services and UI templates
-
-## Possible future improvements
-
-- Replace local JSON persistence with SQLite or SQL Server
-- Add proper authentication
-- Split Program.cs into controllers, services and views
-- Add unit tests for CRM logic
-- Improve validation and error messages
-- Add screenshots and demo video
+Useful future work would be real authentication, database-backed storage and historical sales events. These require separate product decisions; they are not necessary to run this local demo.
