@@ -2,11 +2,14 @@
   <PropertyGroup>
     <TargetFramework>net10.0</TargetFramework>
     <Nullable>enable</Nullable>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
   <ItemGroup>
     <Compile Remove="tests/**/*.cs" />
     <Content Remove="tests/**" />
     <None Remove="tests/**" />
+    <PackageReference Include="PDFsharp" Version="6.2.4" />
+    <EmbeddedResource Include="Reporting/Fonts/DejaVuSans.ttf" />
   </ItemGroup>
 </Project>

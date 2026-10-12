@@ -1,5 +1,6 @@
 using System.Globalization;
 using System.Net.Mail;
+using System.Xml;
 
 namespace MiniCRM.Models;
 
@@ -18,6 +19,18 @@ public static class CrmRules
     public static bool IsDate(string? value) => DateOnly.TryParseExact(value, "yyyy-MM-dd", CultureInfo.InvariantCulture, DateTimeStyles.None, out _);
     public static bool IsEmail(string? value) => !string.IsNullOrWhiteSpace(value) && value.Length <= 254
         && MailAddress.TryCreate(value, out var address) && address.Address == value && address.Host.Contains('.');
+    public static bool IsSupportedText(string value)
+    {
+        try
+        {
+            XmlConvert.VerifyXmlChars(value);
+            return true;
+        }
+        catch (XmlException)
+        {
+            return false;
+        }
+    }
     public static string TaskStatus(FollowUpTask task, string today) => task.Status == "Done" ? "Done"
         : string.CompareOrdinal(task.DueDate, today) < 0 ? "Overdue" : task.Status == "Overdue" ? "Open" : task.Status;
 }

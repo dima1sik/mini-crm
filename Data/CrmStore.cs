@@ -112,7 +112,7 @@ public sealed class CrmStore
             && c.ContactName is not null && c.Phone is not null && CrmRules.OwnerNames.Contains(c.Owner)));
         Require(data.Deals!.All(d => data.Clients.Any(c => c.Id == d.ClientId) && CrmRules.DealStages.Contains(d.Stage)
             && d.Value is >= 0 and <= CrmRules.MaximumDealValue && CrmRules.IsDate(d.Created) && CrmRules.IsDate(d.LastActivityDate)
-            && CrmRules.IsDate(d.Deadline) && !string.IsNullOrWhiteSpace(d.Title) && CrmRules.OwnerNames.Contains(d.Owner)
+            && CrmRules.IsDate(d.Deadline) && !string.IsNullOrWhiteSpace(d.Title) && CrmRules.IsSupportedText(d.Title) && CrmRules.OwnerNames.Contains(d.Owner)
             && d.History is not null && d.History.All(h => h is not null && CrmRules.IsDate(h.Date) && h.Author is not null && h.Text is not null)));
         Require(data.Tasks!.All(t => data.Deals.Any(d => d.Id == t.DealId && d.ClientId == t.ClientId)
             && CrmRules.IsDate(t.DueDate) && (CrmRules.TaskStatuses.Contains(t.Status) || t.Status == "Overdue") && CrmRules.Priorities.Contains(t.Priority)

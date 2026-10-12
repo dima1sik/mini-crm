@@ -180,7 +180,8 @@ public sealed class CrmService(CrmStore store)
     private static string Text(string value, string name, int maxLength, bool optional = false)
     {
         value = value.Trim();
-        if ((!optional && value.Length == 0) || value.Length > maxLength || value.Any(c => char.IsControl(c) && c is not '\n' and not '\r' and not '\t'))
+        if ((!optional && value.Length == 0) || value.Length > maxLength || !CrmRules.IsSupportedText(value)
+            || value.Any(c => char.IsControl(c) && c is not '\n' and not '\r' and not '\t'))
             throw Invalid($"{name} must contain {(optional ? "at most" : "1 to")} {maxLength} characters.");
         return value;
     }
